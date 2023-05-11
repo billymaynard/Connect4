@@ -1,0 +1,16 @@
+.play-button {
+    -fx-background-color: #d8d507;
+    -fx-font-size: 25px;
+    -fx-background-radius: 20px;
+    -fx-text-fill:rgb(34, 20, 233);
+    -fx-font-weight:bolder;
+}
+.play-button:hover {
+    -fx-border-color:blue;
+    -fx-border-width:5px;
+    -fx-border-radius:20px;
+}
+.current_player {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}

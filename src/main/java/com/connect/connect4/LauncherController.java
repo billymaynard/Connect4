@@ -1,14 +1,24 @@
 package com.connect.connect4;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class LauncherController {
-    @FXML
-    private Label welcomeText;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    protected void onPlayButtonClick(ActionEvent event) throws IOException {
+        Button pressedButton = (Button) event.getSource();
+        Scene currentScene = pressedButton.getScene();
+        Stage currentStage = (Stage) currentScene.getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(Launcher.class.getResource("game.fxml"));
+        Scene newscene = new Scene(fxmlLoader.load());
+        currentStage.setScene(newscene);
+        currentStage.show();
     }
 }

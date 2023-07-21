@@ -1,5 +1,10 @@
 package com.connect.connect4;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 import java.io.*;
 import java.util.ArrayList;
 
@@ -17,8 +22,8 @@ public class PlayerList {
         try {
             String currentline = br.readLine();
             while (currentline != null){
-                String[] playerinfo = currentline.split("#");
-                Player newPlayer = new Player(playerinfo[0],Integer.parseInt(playerinfo[1]),Integer.parseInt(playerinfo[2]),Integer.parseInt(playerinfo[3]));
+                String[] playerInfo = currentline.split("#");
+                Player newPlayer = new Player(playerInfo[0],Integer.parseInt(playerInfo[1]),Integer.parseInt(playerInfo[2]),Integer.parseInt(playerInfo[3]));
                 addPlayersToCurrentList(newPlayer);
                 currentline=br.readLine();
             }
@@ -32,6 +37,9 @@ public class PlayerList {
             stringBuilder.append(x.toString()).append(System.lineSeparator());
         }
         return stringBuilder.toString();
+    }
+    public ArrayList<Player> getCurrentList(){
+        return currentlist;
     }
 }
 class Player{
@@ -47,5 +55,21 @@ class Player{
     }
     public String toString(){
         return name+" "+String.valueOf(gamesPlayed)+" "+String.valueOf(gamesWon)+" "+String.valueOf(gamesLost);
+    }
+
+    public StringProperty getNameProperty() {
+        return new SimpleStringProperty((String) name);
+    }
+
+    public StringProperty getGamesPlayedProperty() {
+        return new SimpleStringProperty(String.valueOf((int) gamesPlayed));
+    }
+
+    public StringProperty getGamesWonProperty() {
+        return new SimpleStringProperty(String.valueOf((int) gamesWon));
+    }
+
+    public StringProperty getGamesLostProperty() {
+        return new SimpleStringProperty(String.valueOf((int) gamesLost));
     }
 }

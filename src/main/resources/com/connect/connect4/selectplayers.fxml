@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="530.0" prefWidth="697.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.connect.connect4.PlayerSelection">
+   <children>
+      <TableView fx:id="tableView" layoutX="-3.0" layoutY="77.0" prefHeight="594.0" prefWidth="454.0" stylesheets="@styles/selectplayer.css">
+        <columns>
+          <TableColumn fx:id="nameColumn" editable="false" prefWidth="168.0" resizable="false" text="Nombre" />
+          <TableColumn fx:id="gamesPlayedColumn" editable="false" prefWidth="130.0" resizable="false" sortable="false" text="Partidas Jugadas" />
+            <TableColumn fx:id="gamesWonColumn" editable="false" minWidth="0.0" prefWidth="79.0" resizable="false" sortable="false" text="Victorias" />
+            <TableColumn fx:id="gamesLostColumn" editable="false" prefWidth="76.0" resizable="false" sortable="false" text="Derrotas" />
+        </columns>
+      </TableView>
+      <Label layoutX="40.0" layoutY="28.0" prefHeight="31.0" prefWidth="225.0" text="Elige Jugador 1:" textFill="#ee1f1f">
+         <font>
+            <Font name="Liberation Serif Bold Italic" size="28.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
